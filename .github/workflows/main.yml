@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: sapmachine/lts
     steps:
-      - uses: actions/setup-java@v1
-        with:
-          java-version: '11.0.4' 
+      - uses: actions/checkout@v2
       - run: |
           echo $PATH
           java -version
