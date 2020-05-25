@@ -9,10 +9,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: sapmachine/lts
+    services: 
+      springboot:
+        image: sonamsamdupkhangsar/springboot-docker
+        ports: 
+          - 8080:8080
     steps:
       - uses: actions/checkout@v2
       - run: |
           echo $PATH
           java -version
+          curl localhost:8080
