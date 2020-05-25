@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     services: 
       springboot:
-        image: sonamsamdupkhangsar/springboot-docker
+        image: nginx
         ports: 
-          - 8080:8080
+          - 8080:80
     steps:
       - uses: actions/checkout@v2
       - run: |
           echo $PATH
           java -version
-          curl localhost:8080/
+          curl localhost:8080
